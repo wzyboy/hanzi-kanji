@@ -18,8 +18,8 @@
     <ol class="questions">
     {% for pic_group in pic_groups %}
       <li class="question">
-        {% for pic in pic_group %}
-          <img src="data:image/jpg;base64,{{ pic | safe }}" alt="">
+        {% for name, b64 in pic_group %}
+          <img title="{{ name }}" src="data:image/jpg;base64,{{ b64 | safe }}" alt="{{ name }}">
         {% endfor %}
       </li>
     {% endfor %}

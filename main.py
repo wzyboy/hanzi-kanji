@@ -27,7 +27,10 @@ def main():
 
         # Encoded shuffled pics
         pic_group = [
-            base64.b64encode(open(p, 'rb').read()).decode()
+            (
+                p.parent.name,
+                base64.b64encode(open(p, 'rb').read()).decode()
+            )
             for p in pic_paths
         ]
         pic_groups.append(pic_group)
